@@ -34,10 +34,30 @@ class _MyVidState extends State<MyVid> {
         return InstagramHomePAge();
       }));
     }
+
     return MaterialApp(
       home: Scaffold(
-        body: 
-      ),
+          body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.fromLTRB(15.0, 40.0, 15.0, 150.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                IconButton(
+                  onPressed: (() => {
+                        controller.pause(),
+                        selectPage(context),
+                      }),
+                  icon: Icon(Icons.arrow_back),
+                ),
+              ],
+            ),
+          ),
+          VideoPlayerWidget(controller: controller),
+        ],
+      )),
     );
   }
 }
