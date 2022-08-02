@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  video_player: ^2.4.5
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -64,6 +64,7 @@ flutter:
     - assets/images/ivan-kazlouskij-rEEa-UKCKMw-unsplash.jpg
     - assets/images/hans-isaacson-Eiei7cTji0U-unsplash.jpg
     - assets/images/moise-m-LByIP24-WYc-unsplash.jpg
+    - assets/video/VideoMe.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
