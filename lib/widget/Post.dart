@@ -22,7 +22,7 @@ class Post extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(2.0, 0, 10, 0),
                       child: CircleAvatar(
                         backgroundImage: AssetImage(avatar),
-                        radius: 18,
+                        radius: 15,
                       ),
                     ),
                     Text(userName),
