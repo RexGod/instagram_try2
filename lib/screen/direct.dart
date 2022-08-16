@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
-import './widget/chat.dart';
+import '../widget/chat.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../main.dart';
 
 class Direct extends StatefulWidget {
   @override

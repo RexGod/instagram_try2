@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './widget/Storie.dart';
 import './widget/Post.dart';
-import 'direct.dart';
+import 'screen/direct.dart';
 
 void main() => runApp(Instagram());
 
@@ -99,26 +99,7 @@ class _InstagramHomePAgeState extends State<InstagramHomePAge> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: const [
-              Icon(Icons.home_filled),
-              Icon(Icons.search_rounded),
-              Icon(Icons.add_box_outlined),
-              Icon(Icons.favorite_border_outlined),
-              CircleAvatar(
-                backgroundImage: AssetImage(
-                    'assets/images/collins-lesulie-rN8YED0SVZA-unsplash.jpg'),
-                radius: 13,
-              )
-            ],
-          ),
-        ),
-      ),
+      
     );
   }
 }
