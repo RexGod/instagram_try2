@@ -28,7 +28,9 @@ class _DirectState extends State<Direct> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     IconButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        Navigator.of(context).pop();
+                      }),
                       icon: Icon(Icons.arrow_back),
                     ),
                     Icon(Icons.add)
@@ -87,6 +89,8 @@ class _DirectState extends State<Direct> {
         )));
   }
 
+  //searching methode
+  /* using where method for select item in argument list */
   void searching(String query) {
     final suggest = chatBox.where((chat) {
       final usersName = chat.userName.toLowerCase();
