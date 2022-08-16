@@ -11,16 +11,9 @@ class Direct extends StatefulWidget {
 class _DirectState extends State<Direct> {
   final searchController = TextEditingController();
   List<Chat> chats = chatBox;
-
+  static const routName = '/directMessage';
   @override
   Widget build(BuildContext context) {
-    void selectPage(BuildContext ctx) {
-      Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-        //navigate to HomePage
-        return InstagramHomePAge();
-      }));
-    }
-
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'ibarra'),
@@ -35,7 +28,7 @@ class _DirectState extends State<Direct> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     IconButton(
-                      onPressed: (() => selectPage(context)),
+                      onPressed: (() {}),
                       icon: Icon(Icons.arrow_back),
                     ),
                     Icon(Icons.add)
