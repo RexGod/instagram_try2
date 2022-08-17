@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_try2/screen/Favorite.dart';
 import 'package:instagram_try2/screen/Tab.dart';
+import 'package:instagram_try2/screen/album_List_Screen.dart';
 import 'package:instagram_try2/screen/home.dart';
 import 'package:instagram_try2/screen/profile.dart';
+import 'package:instagram_try2/screen/explorer_screen.dart';
 import 'screen/direct.dart';
-import 'screen/explorer.dart';
 
 void main() => runApp(Instagram());
 
@@ -24,8 +25,9 @@ class Instagram extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/favoriteScreen': (context) => FavortieScreen(),
         '/profileScreen': (context) => ProfileScreen(),
-        '/explorerScreen': (context) => ExplorerScreen(),
+        '/exploreritems': (context) => ExplorerScreen(),
         '/directMessage': (context) => Direct(),
+        '/AlbumListScreen': (context) => AlbumListScreen(),
       },
     );
   }
