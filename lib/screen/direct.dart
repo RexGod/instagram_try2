@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 import '../widget/chat.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
 
 class Direct extends StatefulWidget {
+  static const routName = '/directMessage';
   @override
   State<Direct> createState() => _DirectState();
 }
@@ -11,7 +11,6 @@ class Direct extends StatefulWidget {
 class _DirectState extends State<Direct> {
   final searchController = TextEditingController();
   List<Chat> chats = chatBox;
-  static const routName = '/directMessage';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,21 +36,23 @@ class _DirectState extends State<Direct> {
                   ],
                 ),
               ),
+              // ignore: sized_box_for_whitespace
               Container(
                 width: 350,
-                height: 50,
-                child: Card(
-                  child: TextField(
-                    onChanged: searching,
-                    decoration: InputDecoration(
-                      hintText: 'search',
-                      prefixIcon: IconButton(
-                        onPressed: (() {}),
-                        icon: Icon(Icons.search),
-                      ),
+                height: 45,
+                child: TextField(
+                  onChanged: searching,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
-                    controller: searchController,
+                    hintText: 'search',
+                    prefixIcon: IconButton(
+                      onPressed: (() {}),
+                      icon: Icon(Icons.search),
+                    ),
                   ),
+                  controller: searchController,
                 ),
               ),
               Container(
