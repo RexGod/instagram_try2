@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'explorer_screen.dart';
 import './profile.dart';
-import './explorer.dart';
 import './Favorite.dart';
 import './home.dart';
 
@@ -11,7 +11,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  final List<Map<String, Object>> pages = [
+  final List<Map<String, Object>> _pages = [
     {'page': HomeScreen()},
     {'page': ExplorerScreen()},
     {'page': FavortieScreen()},
@@ -27,7 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_selectPageIndex]['page'] as Widget,
+      body: _pages[_selectPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
           onTap: _selectPage,
           elevation: 20,
@@ -43,15 +43,13 @@ class _TabsScreenState extends State<TabsScreen> {
           items: [
             const BottomNavigationBarItem(
                 icon: Icon(Icons.home_rounded), label: ''),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: ''),
+            const BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
             _selectPageIndex == 2
                 ? const BottomNavigationBarItem(
                     icon: Icon(Icons.favorite), label: '')
                 : const BottomNavigationBarItem(
                     icon: Icon(Icons.favorite_border), label: ''),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.star), label: '')
+            const BottomNavigationBarItem(icon: Icon(Icons.star), label: '')
           ]),
     );
   }
