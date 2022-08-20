@@ -7,7 +7,7 @@ class ExplorerItems extends StatelessWidget {
 
   ExplorerItems({required this.id, required this.urlImage});
   void tansferData(BuildContext context) {
-    Navigator.of(context).pushNamed(AlbumListScreen.routeName, arguments: {id});
+    Navigator.of(context).pushNamed(AlbumListScreen.routeName, arguments: id);
   }
 
   @override

@@ -79,8 +79,6 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
   void _setData() async {
     var url = Uri.https('jsonplaceholder.typicode.com', '/photos');
     var response = await http.get(url);
-
-    // ignore: unrelated_type_equality_checks
     var jsonResponse = convert.jsonDecode(response.body);
 
     setState(() {

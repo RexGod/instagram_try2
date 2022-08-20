@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_try2/screen/Favorite.dart';
 import 'package:instagram_try2/screen/Tab.dart';
+import 'package:instagram_try2/screen/albumImageScreen.dart';
 import 'package:instagram_try2/screen/home.dart';
 import 'package:instagram_try2/screen/profile.dart';
 import 'screen/album_List_Screen.dart';
@@ -28,6 +29,7 @@ class Instagram extends StatelessWidget {
         '/explorerScreen': (context) => ExplorerScreen(),
         '/directMessage': (context) => Direct(),
         '/AlbumListScreen' : (context) => AlbumListScreen(),
+        '/AlbumImage' :(context) => AlbumImage()
       },
     );
   }
