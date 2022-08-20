@@ -3,6 +3,7 @@ import 'package:instagram_try2/screen/Favorite.dart';
 import 'package:instagram_try2/screen/Tab.dart';
 import 'package:instagram_try2/screen/home.dart';
 import 'package:instagram_try2/screen/profile.dart';
+import 'screen/album_List_Screen.dart';
 import 'screen/direct.dart';
 import 'screen/explorer.dart';
 
@@ -26,6 +27,7 @@ class Instagram extends StatelessWidget {
         '/profileScreen': (context) => ProfileScreen(),
         '/explorerScreen': (context) => ExplorerScreen(),
         '/directMessage': (context) => Direct(),
+        '/AlbumListScreen' : (context) => AlbumListScreen(),
       },
     );
   }
