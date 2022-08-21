@@ -28,8 +28,8 @@ class Instagram extends StatelessWidget {
         '/profileScreen': (context) => ProfileScreen(),
         '/explorerScreen': (context) => ExplorerScreen(),
         '/directMessage': (context) => Direct(),
-        '/AlbumListScreen' : (context) => AlbumListScreen(),
-        '/AlbumImage' :(context) => AlbumImage()
+        '/AlbumListScreen': (context) => AlbumListScreen(),
+        '/AlbumImage': (context) => AlbumImage()
       },
     );
   }
