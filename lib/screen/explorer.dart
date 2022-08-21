@@ -13,6 +13,7 @@ class ExplorerScreen extends StatefulWidget {
 class _ExplorerScreenState extends State<ExplorerScreen> {
   final searchController = TextEditingController();
   List explorerPhotos = List.empty();
+  List explorerPhotostemp = List.empty();
   bool _loading = true;
 
   @override
@@ -33,7 +34,7 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.fromLTRB(10, 45, 10, 0),
+              margin: const EdgeInsets.fromLTRB(10, 80, 10, 0),
               height: 35,
               width: 380,
               decoration: BoxDecoration(
@@ -58,14 +59,18 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
             ),
             Container(
               width: 400,
-              height: 550,
+              height: 620,
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 150, childAspectRatio: 1),
+                    maxCrossAxisExtent: 195,
+                    childAspectRatio: 1,
+                    mainAxisExtent: 99),
                 itemBuilder: ((context, index) {
                   return ExplorerItems(
-                      id: explorerPhotos[index]['albumId'],
-                      urlImage: explorerPhotos[index]['thumbnailUrl']);
+                    id: explorerPhotos[index]['id'],
+                    urlImage: explorerPhotos[index]['Image'],
+                    title: explorerPhotos[index]['titles'],
+                  );
                 }),
                 itemCount: explorerPhotos.length,
               ),
@@ -77,19 +82,21 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
   }
 
   void _setData() async {
-    var url = Uri.https('jsonplaceholder.typicode.com', '/photos');
+    var url = Uri.https('6301385a9a1035c7f8ffb7fb.mockapi.io',
+        '/instaDUMMYDATA/api/v01/Explorer_items');
     var response = await http.get(url);
     var jsonResponse = convert.jsonDecode(response.body);
 
     setState(() {
       explorerPhotos = jsonResponse as List;
+      explorerPhotostemp = explorerPhotos;
       _loading = false;
     });
   }
 
   void _searchAlbum(String inputSearch) {
-    final answer = explorerPhotos.where((element) {
-      final albumName = element['title'].toString().toLowerCase();
+    final answer = explorerPhotostemp.where((element) {
+      final albumName = element['titles'].toString().toLowerCase();
       final input = inputSearch.toLowerCase();
       return albumName.contains(input);
     }).toList();
