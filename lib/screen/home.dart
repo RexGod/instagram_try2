@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Container(
-                      padding: const EdgeInsets.fromLTRB(10, 15.0, 10, 5),
+                      padding: const EdgeInsets.fromLTRB(10, 15.0, 10, 0),
                       child:
                           Storie(stories[index].url, stories[index].userName));
                 },
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.grey[300],
             ),
             Container(
-              height: 420,
+              height: 520,
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
