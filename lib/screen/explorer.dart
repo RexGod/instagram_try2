@@ -62,14 +62,14 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
               height: 620,
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 195,
-                    childAspectRatio: 1,
-                    mainAxisExtent: 99),
+                  maxCrossAxisExtent: 150,
+                  childAspectRatio: 1,
+                ),
                 itemBuilder: ((context, index) {
                   return ExplorerItems(
-                    id: explorerPhotos[index]['id'],
-                    urlImage: explorerPhotos[index]['Image'],
-                    title: explorerPhotos[index]['titles'],
+                    id: explorerPhotos[index]['albumId'],
+                    urlImage: explorerPhotos[index]['url'],
+                    title: explorerPhotos[index]['title'],
                   );
                 }),
                 itemCount: explorerPhotos.length,
@@ -82,8 +82,7 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
   }
 
   void _setData() async {
-    var url = Uri.https('6301385a9a1035c7f8ffb7fb.mockapi.io',
-        '/instaDUMMYDATA/api/v01/Explorer_items');
+    var url = Uri.https('jsonplaceholder.typicode.com', '/photos');
     var response = await http.get(url);
     var jsonResponse = convert.jsonDecode(response.body);
 
@@ -96,7 +95,7 @@ class _ExplorerScreenState extends State<ExplorerScreen> {
 
   void _searchAlbum(String inputSearch) {
     final answer = explorerPhotostemp.where((element) {
-      final albumName = element['titles'].toString().toLowerCase();
+      final albumName = element['title'].toString().toLowerCase();
       final input = inputSearch.toLowerCase();
       return albumName.contains(input);
     }).toList();

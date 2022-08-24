@@ -3,14 +3,22 @@ import 'package:flutter/material.dart';
 import '../screen/albumImageScreen.dart';
 
 class AlbumListItem extends StatelessWidget {
-  final String id;
+  final int id;
   final String urlImage;
   final String title;
-  AlbumListItem(
-      {required this.id, required this.urlImage, required this.title});
+
+  AlbumListItem({
+    required this.id,
+    required this.urlImage,
+    required this.title,
+  });
 
   void tansferData(BuildContext context) {
-    Navigator.of(context).pushNamed(AlbumImage.routeName, arguments: urlImage);
+    Navigator.of(context).pushNamed(AlbumImage.routeName, arguments: {
+      //'id': id,
+      'image': urlImage,
+      'title': title,
+    });
   }
 
   @override
