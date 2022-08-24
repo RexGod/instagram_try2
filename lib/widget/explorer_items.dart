@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import '../screen/album_List_Screen.dart';
 
 class ExplorerItems extends StatelessWidget {
-  final String id;
+  final int id;
   final String urlImage;
   final String title;
   ExplorerItems(
       {required this.id, required this.urlImage, required this.title});
   void tansferData(BuildContext context) {
-    Navigator.of(context).pushNamed(AlbumListScreen.routeName, arguments: id);
+    Navigator.of(context).pushNamed(AlbumListScreen.routeName, arguments: {'id' : id , 'image' : urlImage} );
   }
 
   @override
